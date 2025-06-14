@@ -1,0 +1,31 @@
+$form-check-input-checked-color: #1e3a8a;
+
+$form-check-input-checked-bg-color: #ffffff;
+
+$form-check-input-focus-box-shadow: none;
+
+$focus-ring-width: 0.05rem;
+
+$input-placeholder-color: #c7c7cc;
+
+$input-plaintext-color: #020202;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+  "primary-1": #1e3a8a,
+  "primary-2": #3b82f6,
+  "neutral-1": #374151,
+  "neutral-2": #f3f4f6,
+  "white": #ffffff,
+  "accent-1": #10b981,
+  "accent-2": #f59e0b,
+  "accent-3": #ef4444,
+  "black": #020202,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+//import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";

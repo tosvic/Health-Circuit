@@ -1,0 +1,22 @@
+{
+  "name": "health-circuit",
+  "version": "1.0.0",
+  "description": "Health Circuit is a digital health literacy platform designed to improve community wellness by delivering trusted, local, and digestible health education. It aims to bridge the gap between citizens and reliable health information through short articles, relevant alerts, and health resources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosvic/Health-Circuit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tosvic/Health-Circuit/issues"
+  },
+  "homepage": "https://github.com/tosvic/Health-Circuit#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  }
+}
