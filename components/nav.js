@@ -3,13 +3,13 @@ class myHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top">
-      <div class="container-fluid px-4 bg-white">
+      <div class="container-fluid px-3 bg-white">
         <a class="navbar-brand" href="/index.html">
           <img class="rounded w-25" src="/assets/images/logo.png" alt="" />
         </a>
 
         <button
-          class="navbar-toggler ms-auto"
+          class="navbar-toggler p-1 ms-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -18,14 +18,7 @@ class myHeader extends HTMLElement {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-            <li class="nav-item d-flex align-items-center">
-              <a
-                class="nav-link f-inter"
-                href="/index.html"
-                >Home</a
-              >
-            </li>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item d-flex align-items-center">
               <a
                 class="nav-link f-inter"

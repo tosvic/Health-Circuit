@@ -31,7 +31,7 @@ body::before {
 
 .navbar-nav .nav-item:not(:last-child)::after {
   content: "|";
-  margin: 0 15px;
+  margin: 0 10px;
   color: var(--primary-1);
   font-weight: bold;
   opacity: 0;
