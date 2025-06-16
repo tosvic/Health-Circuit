@@ -22,42 +22,42 @@ class myHeader extends HTMLElement {
             <li class="nav-item d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/health-news.html"
+                href="/frontend/category/health-news.html"
                 >HealthNews</a
               >
             </li>
             <li class="nav-item f-inter d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/wellness.html"
+                href="/frontend/category/wellness.html"
                 >Wellness</a
               >
             </li>
             <li class="nav-item f-inter d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/nutrition.html"
+                href="/frontend/category/nutrition.html"
                 >Nutrition</a
               >
             </li>
             <li class="nav-item f-inter d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/public-health.html"
+                href="/frontend/category/public-health.html"
                 >PublicHealth</a
               >
             </li>
             <li class="nav-item f-inter d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/health-tips.html"
+                href="/frontend/category/health-tips.html"
                 >Health Tips</a
               >
             </li>
             <li class="nav-item f-inter d-flex align-items-center">
               <a
                 class="nav-link f-inter"
-                href="/category/about-us.html"
+                href="/frontend/category/about-us.html"
                 >About us</a
               >
             </li>
