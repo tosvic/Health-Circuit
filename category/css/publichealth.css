@@ -482,9 +482,6 @@ footer div i:hover {
 }
 /* Tablet Responsiveness */ 
 @media(min-width:768px) and (max-width:1024px) {
-  .heading{
-    
-  }
   .content-1 {
     display:grid;
     grid-template-columns: 1fr 1fr;
