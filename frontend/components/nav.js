@@ -5,7 +5,7 @@ class myHeader extends HTMLElement {
     <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top">
       <div class="container-fluid px-3 bg-white">
         <a class="navbar-brand" href="/index.html">
-          <img class="rounded w-25" src="/assets/images/logo.png" alt="" />
+          <img class="rounded w-25" src="/frontend/assets/images/logo.png" alt="" />
         </a>
 
         <button
@@ -78,9 +78,9 @@ class myHeader extends HTMLElement {
   }
 }
 
-//Active Navlinks
 customElements.define("my-header", myHeader);
 
+//Active Navlinks
 const activePage = window.location.pathname;
 const navLinks = document.querySelectorAll("nav a");
 
@@ -98,7 +98,7 @@ class myFooter extends HTMLElement {
       <div class="container d-flex">
         <div class="d-flex flex-column align-items-start me-auto">
           <div>
-            <img src="/assets/images/logo.png" alt="" />
+            <img src="/frontend/assets/images/logo.png" alt="" />
           </div>
           <p class="text-white w-50">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
