@@ -1,0 +1,55 @@
+:root {
+  --primary-1: #1e3a8a;
+  --primary-2: #3b82f6;
+  --neutral-1: #374151;
+  --neutral-2: #f3f4f6;
+  --white: #ffffff;
+  --accent-1: #10b981;
+  --accent-2: #f59e0b;
+  --accent-3: #ef4444;
+  --black: #020202;
+  --grey-3: #c7c7cc;
+}
+
+body::before {
+  display: block;
+  content: "";
+  height: 60px;
+}
+
+.f-inter {
+  font-family: "Inter";
+}
+
+.f-roboto {
+  font-family: "Roboto";
+}
+
+.navbar {
+  height: 60px;
+}
+
+.navbar-nav .nav-item:not(:last-child)::after {
+  content: "|";
+  margin: 0 10px;
+  color: var(--primary-1);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-collapse.collapse.show .navbar-nav .nav-item:not(:last-child)::after {
+  content: "";
+  opacity: 0;
+}
+
+.navbar-collapse.collapse:not(.show)
+  .navbar-nav
+  .nav-item:not(:last-child)::after {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+a:is(:link, :active, :visited).active-p {
+  color: var(--primary-1);
+}
