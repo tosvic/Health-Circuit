@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Navbar Header
 class myHeader extends HTMLElement {
   connectedCallback() {
@@ -124,3 +125,6 @@ class myFooter extends HTMLElement {
 }
 
 customElements.define("my-footer", myFooter);
+=======
+
+>>>>>>> Abundance
