@@ -1,5 +1,5 @@
 import User from "../models/usermodel.js";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -10,41 +10,51 @@ export const createUser = async (req, res) => {
   const checkEmail = await User.findOne({ where: { email } });
 
   if (checkEmail) {
-    res.status(400).json({
+    return res.status(400).json({
       status: false,
       message: "Email has been used already",
       data: [],
     });
   }
 
-  const hashed_password = await bcrypt.hashSync(password, 10);
+  const hashed_password = await bcrypt.hash(password, 10);
+  // console.log({ fullname, email, phoneNumber, password: hashed_password });
 
-  const signup = await User.create({
-    fullname,
-    email,
-    phoneNumber,
-    password: hashed_password,
-  });
-  if (!signup) {
-    return res.status(400).json({
-      staus: false,
-      message: "Unable to signup",
-      data: [],
+  try {
+    const signup = await User.create({
+      fullname,
+      email,
+      phoneNumber,
+      password: hashed_password,
+    });
+    if (!signup) {
+      return res.status(400).json({
+        status: false,
+        message: "Unable to signup",
+        data: [],
+      });
+    }
+
+    // sendEmail(email, "Welcome to Health Circuit!");
+
+    return res.status(201).json({
+      status: true,
+      message: "Sign up successful ",
+    });
+  } catch (err) {
+    console.error(err); // this will show the real reason Sequelize failed
+    return res.status(500).json({
+      status: false,
+      message: "Internal server error",
+      error: err.message, // include this only during development
     });
   }
-
-  sendEmail(email, "Welcome to Health Circuit!");
-
-  return res.status(201).json({
-    status: true,
-    message: "Sign up successful ",
-  });
 };
 
 // Log in an existing user
 export const logInUser = async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ where: email });
+  const user = await User.findOne({ where: {email} });
 
   if (!user) {
     return res.status(400).json({
@@ -63,7 +73,6 @@ export const logInUser = async (req, res) => {
       data: [],
     });
   }
-
 
   let payload = {
     id: user.id,
@@ -92,8 +101,6 @@ export const logInUser = async (req, res) => {
 //   });
 // };
 
-
 // update user profile
-
 
 // update password

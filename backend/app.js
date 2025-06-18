@@ -1,20 +1,23 @@
 import express from "express";
 import dotenv from "dotenv";
-import sequelize from "./configs/dbconfig.js";
-import { signUpRoutes } from "./routes/userroutes.js";
-import { Sequelize } from "sequelize";
+import {sequelize} from "./configs/dbconfig.js";
+import userRoutes from "./routes/userroutes.js";
+// import { Sequelize } from "sequelize";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use("/healthcircuit", signUpRoutes);
+
+app.use(express.json())
+
+app.use("/healthcircuit", userRoutes);
 
 sequelize
   .sync({ alter: true })
   .then(() => {
-    app.listen(port, () => {
+    app.listen(PORT, () => {
       console.log(`Server is running on port: ${PORT}`);
     });
   })
