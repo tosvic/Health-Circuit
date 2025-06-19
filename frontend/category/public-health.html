@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Health Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/components/nav.css">
-    <link rel="stylesheet" href="css/publichealth.css">
+    <link rel="stylesheet" href="/frontend/assets/css/publichealth.css">
+    <link rel="stylesheet" href="/frontend/assets/sass/css/main.min.css">
 <body>
-    <div id="nav-placeholder"></div>
+    <my-header></my-header>
     <!--Main Content Starts here-->
     <main>
         <div class="heading">
@@ -16,7 +16,7 @@
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <p>By <span id="author-name">Author Name</span></p>
         </div>
-        <img src="/assets/images/operation.jpg" alt="">
+        <img src="assets/images/operation.jpg" alt="">
         <article class="content-1">
             <section class="item">
                 <div class="">
@@ -78,41 +78,41 @@
   <h2>Trending Stories</h2>
 
   <article class="trending-story">
-    <h4>Wellness</h4>
+    <h3>Wellness</h3>
     <div class="story-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <img src="/assets/images/excersise.jpg" alt="">
+      <img src="/frontend/assets/images/excersise.jpg" alt="">
     </div>
   </article>
 
   <article class="trending-story">
-    <h4>Heading</h4>
+    <h3>Heading</h3>
     <div class="story-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <img src="/assets/images/medcine.jpg" alt="">
+      <img src="/frontend/assets/images/medcine.jpg" alt="">
     </div>
   </article>
 
   <article class="trending-story">
-    <h4>Heading</h4>
+    <h3>Heading</h3>
     <div class="story-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <img src="/assets/images/tired.jpg" alt="">
+      <img src="/frontend/assets/images/tired.jpg" alt="">
     </div>
   </article>
 
   <article class="trending-story">
-    <h4>Heading</h4>
+    <h3>Heading</h3>
     <div class="story-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <img src="/assets/images/friut.jpg" alt="">
+      <img src="/frontend/assets/images/friut.jpg" alt="">
     </div>
   </article>
 </section>
 
 </section>
 <section class="item comment-section">
-  <h4>1 Comment</h4>
+  <h3>1 Comment</h3>
   <div>
     <textarea name="comment" id="comment-box" rows="3" placeholder="Add a comment"></textarea>
     <button type="button" class="btn">Login To Post</button>
@@ -126,34 +126,34 @@
         <article class="content-2">
             <section class="card">
                 <div>
-                    <h4>Heading</h4>
+                    <h3>Heading</h3>
                 </div>
-                <img src="/assets/images/bed.jpg" alt="">
+                <img src="/frontend/assets/images/bed.jpg" alt="">
             </section>
             <section class="card">
                 <div>
-                    <h4>Heading</h4>
+                    <h3>Heading</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </section>
             <section class="card">
-                <img src="/assets/images/doctors.jpg" alt="">
+                <img src="/frontend/assets/images/doctors.jpg" alt="">
                 <div>
-                    <h4>Heading</h4>
+                    <h3>Heading</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </section>
             <section class="card">
-                <img src="/assets/images/walk.jpg" alt="">
+                <img src="/frontend/assets/images/walk.jpg" alt="">
                 <div>
-                    <h4>Heading</h4>
+                    <h3>Heading</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </section>
             <section class="card">
-                <img src="/assets/images/checkup.jpg" alt="">
+                <img src="/frontend/assets/images/checkup.jpg" alt="">
                 <div>
-                    <h4>Heading</h4>
+                    <h3>Heading</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </section><br>
@@ -165,30 +165,31 @@
         <div class="ads">
             <p>Ads</p>
         </div>
-        <div class="newsletter">
-            
+
+        <div class="newsletter"> 
         <div class="left-side">
-            <img src="/assets/images/logo.png" alt="logo">
+            <img src="/frontend/assets/images/logo.png" alt="logo">
             <p>Get the best healthcare Newsletter in your inbox</p>
             <form action="" method="get">
                 <input type="email" name="email" placeholder="Your Email" required>
                 <button type="submit" class="btn">Subscribe</button>
             </form>
         </div>
-            <img src="/assets/images/newsletter.jpg" alt="" class="news-image">
+            <img src="/frontend/assets/images/newsletter.jpg" alt="" class="news-image">
         </div>
     </main>
     <footer>
         <div>
-            <img src="/assets/images/logo.png" alt="">
+            <img src="/frontend/assets/images/logo.png" alt="">
              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         </div>
         <div>
-            <h4>Follow us</h4>
+            <h3>Follow us</h3>
             <div><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-whatsapp"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-square-youtube"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-x-twitter"></i></div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
     </footer>
-<script src="/assets/js/publichealth.js"></script>
+<script src="/frontend/assets/js/publichealth.js"></script>
+<script src="/frontend/components/nav.js"></script>
 </body>
 </html>
