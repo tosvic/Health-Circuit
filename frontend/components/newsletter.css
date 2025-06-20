@@ -1,0 +1,88 @@
+/* Newsletter Form Styles */
+.newsletter {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-1);
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  gap: 24px;
+  width: 100%;
+}
+
+.newsletter img {
+  width: 120px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.newsletter .news-image {
+  width: 600px;
+  max-width: 100%;
+}
+.newsletter .left-side {
+  width: 50%;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.newsletter p {
+  font-size: 2rem;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.newsletter .btn {
+  background-color: var(--accent-1);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.newsletter .btn:hover {
+  background-color: var(--accent-2);
+}
+
+/* Tablet Responsiveness */
+@media(max-width:1024px){
+  .newsletter .news-image {
+    width: 50%;
+  }
+  .newsletter .left-side {
+    width: 50%;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .newsletter {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+  .newsletter .left-side,
+  .newsletter .news-image {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .newsletter img {
+    width: 120px;
+  }
+  .newsletter .news-image {
+    width: 100% !important;
+    min-width: 0;
+  }
+}

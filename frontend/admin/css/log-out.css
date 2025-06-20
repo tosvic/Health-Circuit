@@ -1,3 +1,7 @@
+/* frontend/admin/css/all-articles.css */
+/* General styles for the admin panel's main content, tables, and forms.
+   Sidebar/Hamburger styles are now ONLY in components/admin-nav/admin-nav.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap');
 
 * {
@@ -7,6 +11,7 @@
 }
 
 :root {
+    /* Colors (provided by user) */
     --primary-1: #1E3A8A;
     --primary-2: #3B82F6;
     --neutral-1: #374151;
@@ -16,6 +21,7 @@
     --accent-2: #F59E0B;
     --accent-3: #EF4444;
 
+    /* Typography (provided by user) */
     --font-main: 'Inter', Arial, sans-serif;
     --font-body: 'Roboto', Arial, sans-serif;
     --font-heading: 'Inter', Arial, sans-serif;
@@ -32,7 +38,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll when sidebar is off-screen */
 }
 
-/* For preventing body scroll when sidebar is open on mobile */
+/* For preventing body scroll when sidebar is open on mobile (managed by admin-nav.js) */
 body.no-scroll {
     overflow: hidden;
 }
@@ -189,12 +195,13 @@ a:hover {
 .form-group input,
 .form-group textarea,
 .form-group select {
-    padding: 10px 12px;
+    padding: 10px 12px; /* Uniform padding for all form inputs */
     border: 1px solid #D1D5DB;
     border-radius: 4px;
     font-size: 1rem;
     background-color: var(--neutral-3);
     color: var(--neutral-1);
+    width: 100%; /* Make all inputs/selects take full width of their parent .form-group */
 }
 
 .form-group input::placeholder,
@@ -208,27 +215,9 @@ a:hover {
     min-height: 80px;
 }
 
-/* --- Specific Add New Content Form Styles --- */
+/* --- Specific Add New Content Form Styles (for this page) --- */
 .form-group-numbered {
     margin-bottom: 32px;
-}
-.form-group-numbered #title, #tags{
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #D1D5DB;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: var(--neutral-3);
-    color: var(--neutral-1);
-}
-.form-group-numbered #author{
-    width: 230px;
-    padding: 10px 12px;
-    border: 1px solid #D1D5DB;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: var(--neutral-3);
-    color: var(--neutral-1);
 }
 .form-group-numbered label {
     font-size: 1.1rem;
@@ -236,40 +225,49 @@ a:hover {
     margin-bottom: 12px;
 }
 
-.form-group-category .category-selection-grid{
-  display: flex;
-  flex-direction: row;
-    gap: 4rem;
+/* New: Two-column layout for category and author */
+.form-row-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 32px; /* Space between the two columns */
+    margin-bottom: 32px; /* Consistent margin with .form-group-numbered */
 }
-.form-group-numbered #category{
-    width: 230px;
-    padding:10px 12px;
-    border: 1px solid #D1D5DB;
-    border-radius: 4px;
+/* Ensure form groups within this row also take full width of their grid cell */
+.form-row-two-cols .form-group-numbered {
+    margin-bottom: 0; /* Remove extra margin as gap handles spacing */
+}
+
+/* This is the container for the dropdown and suggested categories */
+.form-group-category .category-selection-grid {
+    display: grid; /* Use grid for side-by-side layout of dropdown and suggested list */
+    grid-template-columns: 1fr 1fr; /* Two equal columns for desktop */
+    gap: 16px; /* Space between dropdown and suggested categories */
+    align-items: start;
+    width: 100%; /* Ensure it spans its full grid cell */
+}
+
+.category-dropdown-wrapper select {
+    width: 100%; /* Ensure select takes full width of its column */
 }
 .suggested-categories {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 30px;
+    flex-direction: column; /* !!! IMPORTANT: Display individual suggested items in columns (vertically) !!! */
+    gap: 8px; /* Space between suggested category items */
+    padding: 8px; /* Padding inside suggested categories box */
     background-color: var(--neutral-2);
     border-radius: 4px;
     border: 1px solid #D1D5DB;
-    margin-left:15px ;
-}
-.form-group-numbered:nth-child(6){
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Allows wrap for smaller screen, though not primary for column layout */
 }
 .suggested-category-item {
     background-color: var(--primary-2);
     color: var(--neutral-3);
     padding: 6px 10px;
-    border-radius: 10px;
+    border-radius: 20px; /* Pill shape */
     font-size: 0.85rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    width: fit-content; /* Ensure items only take width of their content in column layout */
 }
 .suggested-category-item:hover {
     background-color: var(--primary-1);
@@ -519,6 +517,83 @@ a:hover {
     transform: translateY(-1px);
 }
 
+/* --- Logout Confirmation Section --- */
+.logout-confirmation-section {
+    display: flex;
+    justify-content: center; /* Center the logout card horizontally */
+    align-items: center; /* Center the logout card vertically */
+    flex-grow: 1; /* Allow section to grow and take available space */
+    padding: 0; /* Remove padding if inherited from add-article-section for better centering */
+    background-color: transparent; /* Make background transparent to show page background */
+    box-shadow: none; /* Remove shadow */
+}
+
+.logout-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--neutral-3); /* White background for the card */
+    padding: 48px; /* Generous padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* More pronounced shadow */
+    text-align: center;
+    max-width: 450px; /* Limit width */
+    width: 100%; /* Ensure it's responsive */
+}
+
+.logout-content .user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Hide overflow for rounded image */
+    margin-bottom: 24px;
+    border: 3px solid var(--primary-2); /* Blue border around avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--neutral-2); /* Placeholder background */
+}
+.logout-content .user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 50%; /* Apply border-radius to the image itself as well for safety */
+}
+
+.logout-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+    color: var(--neutral-1);
+}
+
+.logout-buttons {
+    display: flex;
+    gap: 24px; /* Space between Yes/No buttons */
+    justify-content: center;
+}
+
+.logout-buttons .btn {
+    min-width: 120px; /* Ensure buttons have a minimum width */
+    padding: 12px 20px; /* Larger padding for logout buttons */
+    font-size: 1.05rem;
+}
+
+.logout-buttons .btn-yes {
+    background-color: var(--accent-3); /* Red for Yes (Logout) */
+    color: var(--neutral-3);
+}
+.logout-buttons .btn-yes:hover {
+    background-color: #CC0000;
+}
+
+.logout-buttons .btn-no {
+    background-color: var(--primary-2); /* Blue for No (Stay) */
+    color: var(--neutral-3);
+}
+.logout-buttons .btn-no:hover {
+    background-color: var(--primary-1);
+}
+
 
 /* --- Responsive Adjustments (Only for main content, sidebar handled by admin-nav.css) --- */
 
@@ -532,9 +607,22 @@ a:hover {
     .search-bar {
         width: 300px;
     }
-    .form-group-category .category-selection-grid {
-        grid-template-columns: 1fr; /* Stack category dropdown and suggested on tablet */
+    /* Category and Author stack on tablet */
+    .form-row-two-cols {
+        grid-template-columns: 1fr; /* Stack into a single column */
+        gap: 16px; /* Adjust gap for stacking */
     }
+    /* Suggested categories remain column */
+    .form-group-category .category-selection-grid {
+        grid-template-columns: 1fr; /* Stack dropdown and suggested categories vertically */
+    }
+    .suggested-categories {
+        flex-direction: row; /* Allow suggested categories to wrap horizontally on tablet if space is tight */
+        justify-content: center; /* Center them when wrapping */
+        padding: 12px; /* A bit more padding for visual comfort */
+    }
+
+
     .schedule-options {
         grid-template-columns: 1fr; /* Stack date and time on tablet */
     }
@@ -542,199 +630,143 @@ a:hover {
         justify-content: center; /* Center buttons on tablet */
         flex-wrap: wrap; /* Allow buttons to wrap */
     }
-}
-/* Hamburger menu inside header, right-aligned on mobile */
-.hamburger-menu {
-    display: none;
+
+    /* Logout page tablet adjustments */
+    .logout-content {
+        padding: 32px;
+    }
+    .logout-content .user-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 16px;
+    }
+    .logout-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 24px;
+    }
+    .logout-buttons {
+        gap: 16px;
+    }
+    .logout-buttons .btn {
+        min-width: 100px;
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
 }
 
+/* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
-    .admin-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
-    .hamburger-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .admin-wrapper {
+        flex-direction: column;
         position: static;
-        background: var(--neutral-3);
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        font-size: 1.5rem;
-        color: var(--primary-2);
-        cursor: pointer;
-        margin-left: auto;
+        left: unset;
+        transition: none;
+    }
+
+    /* Main content adjustments for non-shifted view */
+    .admin-main-content {
+        padding-top: 96px; /* Add padding to push content below the fixed header (80px height + 16px spacing) */
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 32px;
+        width: 100%;
+    }
+
+    .admin-header {
+        justify-content: center;
+        padding: 12px;
+    }
+    .search-bar {
+        width: 100%;
+        height: 35px;
+        padding: 8px;
+    }
+    .search-bar input {
+        font-size: 0.85rem;
+    }
+
+    .articles-list-section,
+    .add-article-section {
+        padding: 24px;
+    }
+    .articles-list-section h2,
+    .add-article-section h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .add-article-section h2 .icon-left {
+        margin-right: 8px;
+    }
+
+    .articles-table th,
+    .articles-table td {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .add-article-form .btn {
+        align-self: stretch;
+        padding: 10px 20px;
+    }
+
+    /* Form specific mobile adjustments */
+    .form-row-two-cols {
+        grid-template-columns: 1fr; /* Stack category/author on mobile */
+        gap: 16px;
+    }
+    .form-group-category .category-selection-grid {
+        grid-template-columns: 1fr; /* Stack dropdown and suggested categories vertically */
+    }
+    .suggested-categories {
+        flex-direction: row; /* Allow suggested categories to wrap horizontally on mobile */
+        justify-content: center; /* Center them when wrapping */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+    .schedule-options {
+        grid-template-columns: 1fr; /* Stack date/time on mobile */
+        gap: 16px;
+    }
+    .action-buttons-bottom {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 12px;
+    }
+    .action-buttons-bottom .btn {
+        width: 100%; /* Full width buttons on mobile */
+    }
+
+    /* Logout page mobile adjustments */
+    .logout-content {
+        padding: 24px;
+        max-width: 90%; /* Adjust width for smaller screens */
+    }
+    .logout-content .user-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+    }
+    .logout-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+    }
+    .logout-buttons {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        gap: 10px;
+    }
+    .logout-buttons .btn {
+        min-width: unset; /* Remove min-width for full width stacking */
+        width: 100%; /* Full width for vertical stack */
+        padding: 8px 15px;
+        font-size: 0.95rem;
     }
 }
+
+/* Hide hamburger menu and overlay on non-mobile screens (handled by admin-nav.css) */
 @media (min-width: 768px) {
-    .hamburger-menu {
-        display: none !important;
+    body.no-scroll {
+        overflow: auto !important;
     }
-}
-
-/* --- Improved Responsive Adjustments for Mobile & Tablet --- */
-@media (max-width: 1024px) {
-  .admin-main-content {
-    padding: 16px;
-    gap: 20px;
-  }
-  .add-article-section,
-  .add-content-form-section {
-    padding: 16px;
-    border-radius: 6px;
-  }
-  .calendar-display {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 767px) {
-  .admin-wrapper {
-    flex-direction: column;
-    min-width: 0;
-  }
-  .admin-main-content {
-    padding: 8px;
-    gap: 12px;
-  }
-  .add-article-section,
-  .add-content-form-section {
-    padding: 8px;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .admin-header {
-    padding: 10px 8px;
-    border-radius: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .admin-header h2 {
-    font-size: 1.05rem;
-    margin-bottom: 0;
-    gap: 4px;
-  }
-  .form-group-numbered,
-  .form-group-category,
-  .form-group-image-upload,
-  .form-group-schedule {
-    margin-bottom: 14px;
-    padding: 0;
-  }
-  .form-group-numbered label,
-  .form-group-category label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  .form-group-numbered #author,
-  .form-group-numbered #category {
-    width: 100%;
-    min-width: 0;
-  }
-  .category-selection-grid {
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-  .suggested-categories {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    gap: 6px !important;
-    padding: 8px !important;
-    margin-left: 0 !important;
-    font-size: 0.95rem;
-  }
-  .suggested-category-item {
-    font-size: 0.95rem;
-    padding: 4px 10px;
-    border-radius: 8px;
-  }
-  .file-upload-area {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 8px;
-  }
-  .upload-button {
-    font-size: 1rem;
-    padding: 7px 14px;
-  }
-  #file-name {
-    font-size: 0.95rem;
-    margin-top: 2px;
-  }
-  textarea,
-  input[type="text"],
-  input[type="date"],
-  input[type="time"],
-  select {
-    font-size: 1rem;
-    padding: 8px;
-    width: 100%;
-    min-width: 0;
-  }
-  .calendar-display {
-    padding: 6px;
-    font-size: 0.95rem;
-    max-width: 100%;
-    overflow-x: auto;
-  }
-  .calendar-header {
-    flex-direction: column;
-    gap: 2px;
-    font-size: 1rem;
-    padding: 8px 6px;
-  }
-  .calendar-grid {
-    grid-template-columns: repeat(7, 1fr);
-    font-size: 0.9rem;
-    gap: 1px;
-    padding: 6px;
-  }
-  .action-buttons-bottom {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #E0E0E0;
-  }
-  .action-buttons-bottom .btn {
-    width: 100%;
-    font-size: 1rem;
-    padding: 10px 0;
-    justify-content: center;
-  }
-  .radio-group {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .schedule-options {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-  .schedule-date,
-  .schedule-time {
-    width: 100%;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .admin-header h2 {
-    font-size: 0.98rem;
-  }
-  .calendar-header span {
-    font-size: 0.92rem;
-  }
-  .calendar-grid {
-    font-size: 0.85rem;
-  }
+    .admin-main-content {
+        padding: 32px !important;
+    }
 }

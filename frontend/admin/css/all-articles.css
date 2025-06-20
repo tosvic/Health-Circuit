@@ -306,7 +306,6 @@ a:hover {
         left: unset;
         transition: none;
     }
-
     .hamburger-menu {
         display: block;
         position: fixed;
@@ -378,7 +377,7 @@ a:hover {
     .articles-table th,
     .articles-table td {
         padding: 12px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .add-article-form .btn {
