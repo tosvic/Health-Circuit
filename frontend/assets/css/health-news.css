@@ -1,0 +1,43 @@
+/* ------------------- [IMPORT & VARIABLES] ------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --color-primary-1: #1E3A8A;
+  --color-primary-2: #3B82F6;
+
+  --color-neutral-1: #374151;
+  --color-neutral-2: #F3F4F6;
+  --color-neutral-3: #FFFFFF;
+
+  --color-accent-1: #10B981;
+  --color-accent-2: #F59E0B;
+  --color-accent-3: #EF4444;
+
+  --font-heading-main-page: 36px;
+  --font-heading-section-titles: 28px;
+  --font-body: 16px;
+  --font-caption: 12px;
+
+  --font-family-heading: 'Inter', sans-serif;
+  --font-family-body: 'Roboto', sans-serif;
+
+  --container-max-width: 1440px;
+  --spacing-unit: 8px;
+}
+
+/* ------------------- [RESET & BASE STYLES] ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body);
+  color: var(--color-neutral-1);
+  line-height: 1.6;
+  background-color: var(--color-neutral-3);
+}
+
+h1, h2, h
