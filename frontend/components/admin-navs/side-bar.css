@@ -1,0 +1,200 @@
+/* --- Side-Bar Component Styles --- */
+
+/* Use the same root variables as your main admin CSS */
+:root {
+    --primary-1: #1E3A8A;
+    --primary-2: #3B82F6;
+    --neutral-1: #374151;
+    --neutral-2: #F3F4F6;
+    --neutral-3: #FFFFFF;
+    --accent-1: #10B981;
+    --accent-2: #F59E0B;
+    --accent-3: #EF4444;
+    --font-main: 'Inter', Arial, sans-serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+    --font-heading: 'Inter', Arial, sans-serif;
+}
+
+/* --- Side-Bar Layout --- */
+.side-bar {
+    width: 100%;
+    min-height:100%;
+    background-color: var(--primary-1);
+    color: var(--neutral-3);
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.side-bar-logo {
+    padding: 0 24px 32px;
+    text-align: center;
+}
+.side-bar-logo img {
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    margin: 0 auto;
+    background-color: var(--neutral-3);
+    display: block;
+}
+
+.side-bar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    color: var(--neutral-3);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+}
+
+.side-bar-nav .nav-item:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.side-bar-nav .nav-item.active {
+    background-color: var(--primary-2);
+    color: var(--neutral-3);
+    font-weight: 600;
+}
+
+.side-bar-nav .nav-item i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .side-bar {
+        width:px;
+    }
+    .side-bar-nav .nav-item {
+        padding: 16px 16px;
+    }
+    .side-bar-logo img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .side-bar {
+        position: static;
+        width: 100%;
+        height: 10% !important;
+        z-index: auto;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: none;
+        
+    }
+    .side-bar-logo {
+        padding: 0 16px 16px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+    }
+    .side-bar-logo img {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+    .side-bar-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--primary-1);
+        z-index: 1001;
+        box-shadow: 2px 0 15px rgba(0,0,0,0.3);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        padding-top: 80px;
+    }
+    .admin-wrapper.sidebar-open .side-bar-nav {
+        display: block;
+        transform: translateX(0);
+    }
+    .side-bar-nav ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+        gap: 0;
+    }
+    .side-bar-nav li {
+        width: 100%;
+        text-align: left;
+    }
+    .side-bar-nav .nav-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+    .side-bar-nav .nav-item i {
+        margin-right: 12px;
+        margin-bottom: 0;
+        display: inline-block;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .side-bar-nav {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        transform: translateX(0) !important;
+        box-shadow: none !important;
+        padding-top: 0 !important;
+    }
+    .side-bar-nav ul {
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+    .side-bar-nav li {
+        width: 100% !important;
+    }
+    .side-bar-nav .nav-item {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding: 16px 24px !important;
+        font-size: 1rem !important;
+    }
+    .side-bar-nav .nav-item i {
+        margin-right: 12px !important;
+        margin-bottom: 0 !important;
+        display: inline-block !important;
+        font-size: 1.1rem !important;
+    }
+    .side-bar-logo {
+        padding: 0 24px 32px !important;
+        text-align: center !important;
+        display: block !important;
+        height: auto !important;
+    }
+    .side-bar-logo img {
+        width: 80px !important;
+        height: 80px !important;
+        margin: 0 auto !important;
+    }
+}
