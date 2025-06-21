@@ -232,7 +232,8 @@ footer div i:hover {
   color: var(--accent-1); /* Light green hover effect */
 }
 
-/* 👶 Mobile: 0px–480px */
+
+
 @media (max-width: 480px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -257,7 +258,7 @@ footer div i:hover {
   }
 }
 
-/* 📱 Tablet: 768px–1024px */
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
