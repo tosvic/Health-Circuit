@@ -5,6 +5,6 @@ import { upload } from '../configs/fileconfig.js'
 
 const router = express.Router()
 
-router.post('/:userId/article', protectedAction, upload.single('image'), createArticleValidation, validateArticleMiddleware, createArticle)
+router.post('/article', protectedAction, upload.single('image'), createArticleValidation, validateArticleMiddleware, createArticle)
 
 export default router

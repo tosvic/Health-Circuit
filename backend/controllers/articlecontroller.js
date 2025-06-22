@@ -5,7 +5,7 @@ import Article from "../models/articlemodel.js";
 
 export const createArticle = async (req, res) => {
   const { title, category, author, tags, content } = req.body;
-  const userId = Number(req.params.userId)
+  const userId = Number(req.user.id)
 
   // const image = req.file;
   // const imagePath = image ? image.path : null;
