@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import {sequelize} from "./configs/dbconfig.js";
 import userRoutes from "./routes/userroutes.js";
+import articleRoutes from "./routes/articleroutes.js"
 // import { Sequelize } from "sequelize";
 
 dotenv.config();
@@ -11,8 +12,13 @@ const app = express();
 
 
 app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
 
 app.use("/healthcircuit", userRoutes);
+app.use("/healthcircuit", articleRoutes)
+app.use("/uploads", express.static('uploads'))
+
+
 
 sequelize
   .sync({ alter: true })

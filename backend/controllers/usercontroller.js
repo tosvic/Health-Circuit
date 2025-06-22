@@ -1,11 +1,11 @@
 import User from "../models/usermodel.js";
 import dotenv from "dotenv";
-import bcrypt from "bcrypt";
+import bcrypt, { compareSync } from "bcrypt";
 import jwt from "jsonwebtoken";
 
 // create user profile
 export const createUser = async (req, res) => {
-  const { fullname, email, phoneNumber, password } = req.body;
+  const { fullname, email, phoneNumber, password, confirmPassword } = req.body;
 
   const checkEmail = await User.findOne({ where: { email } });
 
@@ -15,6 +15,10 @@ export const createUser = async (req, res) => {
       message: "Email has been used already",
       data: [],
     });
+  }
+  
+  if ( password !== confirmPassword) {
+    return res.send('password does not match')
   }
 
   const hashed_password = await bcrypt.hash(password, 10);
@@ -42,11 +46,11 @@ export const createUser = async (req, res) => {
       message: "Sign up successful ",
     });
   } catch (err) {
-    console.error(err); // this will show the real reason Sequelize failed
+    // console.error(err); // this will show the real reason Sequelize failed
     return res.status(500).json({
       status: false,
-      message: "Internal server error",
-      error: err.message, // include this only during development
+      message: "Internal server error"
+      // error: err.message, // include this only during development
     });
   }
 };
