@@ -19,8 +19,8 @@ export const protectedAction = (req, res, next) => {
 
   const token = authorization.split(" ")[1];
 
-  jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
-    if (err) {
+  const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    if (!decoded) {
       res.status(401).json({
         status: false,
         message: "Unauthorized",
@@ -28,8 +28,7 @@ export const protectedAction = (req, res, next) => {
       });
     }
 
-    req.user = decoded.payload;
-  });
+    req.user = decoded.payload;;
 
   next();
 };
