@@ -1,5 +1,5 @@
 import Article from "../models/articlemodel.js";
-// import
+// import User from '../models/usermodel.js'
 
 // Creating a new article
 
