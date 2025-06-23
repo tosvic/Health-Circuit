@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Reset - Health Circuit</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      background-color: #f7f8fc;
+    }
+
+    .left-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;                                         
+    }
+
+    .left-panel img {
+      height: 100px;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+    }
+
+    .form-box {
+      width: 80%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    p.description {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .password-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .password-box input {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1b3e90;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .back-link {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    span{
+      font-size: 12px;
+      font-weight: lighter;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .code-inputs {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .code-inputs input {
+      width: 40px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .progress {
+      height: 5px;
+      background-color: #e0e0e0;
+      margin: 15px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 25%;
+      height: 100%;
+      background-color: #1b3e90;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="/frontend/assets/images/logo.png" alt="Logo" />
+    </div>
+    <div class="right-panel">
+      <div class="form-box" id="step1">
+        <h2>Forgot Password?</h2>
+        <p class="description">No worries, we’ll send you reset instructions</p>
+        <input type="email" placeholder="Email address" />
+        <button onclick="goToStep(2)">Reset Password</button>
+        <div class="back-link"><a href="/frontend/Login components/login.html">&larr; Back to login</a></div>
+        <div class="progress"><div class="progress-bar" style="width: 33.3%"></div></div>
+      </div>
+
+      <div class="form-box" id="step2" style="display: none;">
+        <h2>Password reset</h2>
+        <p class="description">Please input the six digits code we sent to your Email</p>
+        <div class="code-inputs">
+          <input maxlength="1" />
+          <input maxlength="1" />
+          <input maxlength="1" />
+          <input maxlength="1" />
+          <input maxlength="1" />
+          <input maxlength="1" />
+        </div>
+        <button onclick="goToStep(3)">Continue</button>
+        <div class="back-link">
+          <span>Didn't receive the email? <a href="#">Click here</a></span><br />
+          <a href="/frontend/Login components/login.html">&larr; Back to login</a>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width: 66.6%"></div></div>
+      </div>
+
+      <div class="form-box" id="step3" style="display: none;">
+        <h2>Set new password</h2>
+        <p class="description">Must be at least 8 characters long</p>
+        <div class="password-box">
+          <input type="password" placeholder="Enter new password" id="newPass" />
+        </div>
+        <div class="password-box">
+          <input type="password" placeholder="Confirm password" id="confirmPass" />
+        </div>
+        <button onclick="resetPassword()">Reset Password</button>
+        <div class="back-link"><a href="/frontend/Login-components/forgot.html">&larr; Back to login</a></div>
+        <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goToStep(step) {
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById('step' + i).style.display = i === step ? 'block' : 'none';
+      }
+    }
+
+    function resetPassword() {
+      const newPass = document.getElementById('newPass').value;
+      const confirmPass = document.getElementById('confirmPass').value;
+      if (newPass.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        return;
+      }
+      if (newPass !== confirmPass) {
+        alert('Passwords do not match.');
+        return;
+      }
+      alert('Password has been successfully reset!');
+    }
+  </script>
+</body>
+</html>
