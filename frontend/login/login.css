@@ -101,6 +101,13 @@ input[type="email"] {
   display: none;
 }
 
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 /* Media query for mobile  (smaller than 640px) */
 @media (max-width: 370px) {
   .login {
