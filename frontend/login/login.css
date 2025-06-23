@@ -26,6 +26,22 @@ img {
   width: 200px;
 }
 
+input.invalid {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.75rem;
+  display: block;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  color: green;
+}
+
 .imag {
   border-radius: 10px;
 }
@@ -47,10 +63,6 @@ input[type="email"] {
 
 input[type="email"] {
   margin-bottom: 20px;
-}
-
-.password {
-  position: relative;
 }
 
 .forgot {
@@ -99,6 +111,13 @@ input[type="email"] {
 .welcome-txt {
   margin: 15px 0;
   display: none;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* Media query for mobile  (smaller than 640px) */

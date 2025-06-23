@@ -35,25 +35,32 @@
         <p class="sign-in">sign-in to continue</p>
       </div>
 
-      <form class="forms">
+      <form class="forms" id="loginForm" data-type="login">
+        <div class="message" id="responseMessage"></div>
+
         <label for="email"></label>
-        <input type="email" placeholder="Email address" required />
+        <input type="email" name="email" placeholder="Email address" />
         <br />
         <div class="password">
-          <input type="password" placeholder="Enter Password" required />
-          <span><i class="fa-solid fa-eye-slash"></i></span>
+          <input type="password" name="password" placeholder="Enter Password" />
+          <!-- <span><i class="fa-solid fa-eye-slash"></i></span> -->
         </div>
 
-        <a href="/frontend/Login-components/forgot.html">
+        <a href="/frontend/login/forgot.html">
           <span class="forgot">Forgot Password?</span>
         </a>
 
         <button class="button">Login</button>
+
+        <p id="message"></p>
+
         <p class="text-account">
           Don't have an account?
-          <a href="/frontend/Login-components/sign-in.html">Sign-up</a>
+          <a href="/frontend/Login/sign-up.html">Sign-up</a>
         </p>
       </form>
     </div>
+
+    <script src="/frontend/login/login.js"></script>
   </body>
 </html>
