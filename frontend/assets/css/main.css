@@ -50,9 +50,10 @@ body::before {
   transition: opacity 0.3s ease-in-out;
 }
 
-a {
-  text-decoration: none;
-
 a:is(:link, :active, :visited).active-p {
   color: var(--primary-1);
+}
+
+a {
+  text-decoration: none;
 }
