@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Roboto:'Roboto', sans-serif;
+  --Inter:'Inter', sans-serif;
+  --Open-Sans: 'Open Sans', sans-serif;
+  --primary-1:#1e3a8a;
+  --primary-2: #3B82F6;
+  --neutral-1: #374151;
+  --neutral-2: #F3F4F6;
+  --neutral-3: #FFFFFF;
+  --accent-1: #10B981;
+  --accent-2: #F59E0B;
+  --accent-3: #EF4444;
+  --fontsize-heading-main:36px;
+  --fontsize-section-title: 28px;
+  --fontsize-body: 16px;
+}
+body {
+  font-family: var(--Inter);
+  font-size: var(--fontsize-body);
+  color: var(--neutral-1);
+  background-color: var(--neutral-3);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+main{
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1440px;
+}
+
+.page-title h1 {
+  font-size: var(--fontsize-section-title);
+  color: var(--primary-1);
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+}
+.wellness-articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: row; 
+  gap: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.article-card:hover {
+  background-color: var(--neutral-2);
+  cursor: pointer;
+}
+
+
+.article-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 50%;
+}
+
+.article-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.article-category {
+  text-transform: uppercase;
+  color: var(--primary-2);
+  font-family: var(--Roboto);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.article-title {
+  padding-bottom: 1rem;
+  font-family: var(--Open-Sans);
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+}
+
+.article-details {
+  font-size: 14px;
+  font-family: var(--Inter);
+  color: var(--neutral-1);
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.see-more .btn{
+  display:flex;
+  justify-content: center;
+  color: var(--neutral-3);
+  background-color: var(--primary-1);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 3rem auto;
+  padding: 1rem 3rem;
+}
+.see-more .btn:hover {
+  background-color: var(--primary-2);
+}
+
+
+.ads-banner {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-1);
+  color: var(--neutral-3);
+  font-size: var(--fontsize-body);
+  font-weight: 500;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 3rem auto;
+  text-align: center;
+}
+  
+.newsletter {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-1);
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  gap: 24px;
+  width: 100%;
+}
+
+.newsletter img {
+  width: 120px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.newsletter .news-image{
+  width: 600px;
+  max-width: 100%;
+}
+.newsletter .left-side{
+  width: 50%;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.newsletter p{
+  font-size: 2rem;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.newsletter .btn {
+  background-color: var(--accent-1);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.newsletter .btn:hover {
+  background-color: var(--accent-2);
+}
+
+footer {
+  background-color: var(--neutral-2, hsla(243, 95%, 93%, 1));
+  color: var(--primary-1);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  font-family: var(--Roboto);
+  margin-top: 1rem;
+}
+
+footer > div {
+  flex: 1 1 250px;
+  max-width: 500px;
+}
+
+footer img {
+  width: 100px;
+  max-width: 30%;
+  border-radius: 8px;
+}
+
+footer p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--neutral-1);
+}
+
+
+footer h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--primary-1);
+}
+
+footer div i {
+  font-size: 1.2rem;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+footer div i:hover {
+  transform: scale(1.2);
+  color: var(--accent-1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page-title h1 {
+    font-size: 24px;
+  }
+  .article-title {
+    font-size: 18px;
+    padding-bottom: 1rem;
+  }
+
+  .article-details {
+    font-size: 12px;
+  }
+  .ads-banner {
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  .see-more .btn {
+    padding: 0.8rem 2rem;
+    font-size: 14px;
+  }
+
+  .newsletter {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+  .newsletter .left-side,
+  .newsletter .news-image {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .newsletter img {
+    width: 120px;
+  }
+  .newsletter .news-image {
+    width: 100% !important;
+    min-width: 0;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    gap: 12px;
+  }
+  footer > div {
+    max-width: 100%;
+  }
+  footer img {
+    width: 120px;
+  }
+  footer p {
+    font-size: 1.1rem;
+  }
+
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .wellness-articles {
+    grid-template-columns: 1fr;
+  }
+
+  .article-card {
+    flex-direction: column;
+  }
+
+  .article-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .article-content {
+    width: 100%;
+  }
+   .newsletter .news-image {
+    width: 50%;
+  }
+  .newsletter .left-side {
+    width: 50%;
+  }
+}

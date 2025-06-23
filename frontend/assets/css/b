@@ -37,8 +37,9 @@ img {
 }
 main{
   margin: 0 auto;
-  padding: 0.5rem;
-  max-width: 1200px;
+  padding: 1rem;
+  max-width: 1440px;
+  
 }
 
 .page-title h1 {
@@ -48,6 +49,47 @@ main{
   text-align: center;
   padding: 2rem 0;
 }
+.wellness-articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: row; /* image left, text right */
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.article-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 50%;
+}
+
+.article-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.article-title {
+  padding-bottom: 1rem;
+}
+
 
 .wellness-articles {
   display: grid;
@@ -94,7 +136,7 @@ main{
   font-size: 24px;
   font-weight: 600;
   color: #090909;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
 }
 .article-details {
   font-size: 14px;
@@ -115,7 +157,26 @@ main{
   margin: 3rem auto;
   padding: 1rem 3rem;
 
+}/* === Card Hover Interaction === */
+.article-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* === Button Hover Effect === */
+.see-more .btn {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.see-more .btn:hover {
+  background-color: var(--accent-1);
+  transform: scale(1.05);
+}
+
 
 .ads-banner {
   display: flex;
@@ -132,7 +193,7 @@ main{
   
 .newsletter {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row !important;
   align-items: center;
   justify-content: space-between;
   background: var(--primary-1);
@@ -140,18 +201,20 @@ main{
   padding: 24px;
   color: white;
   gap: 24px;
+  width: 100%;
 }
+
 .newsletter img {
   width: 120px;
   max-width: 100%;
   border-radius: 8px;
 }
 .newsletter .news-image{
-  width: 400px;
+  width: 600px;
   max-width: 100%;
 }
 .newsletter .left-side{
-  width: 40%;
+  width: 50%;
 }
 
 .newsletter form {
@@ -180,16 +243,18 @@ main{
   cursor: pointer;
   border-radius: 6px;
 }
+.newsletter .btn:hover {
+  background-color: var(--accent-2);
+}
 
 footer {
   background-color: var(--neutral-2, hsla(243, 95%, 93%, 1));
-;
   color: var(--primary-1);
   padding: 40px 20px;
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 24px;
   font-family: var(--Roboto);
   margin-top: 1rem;
@@ -229,78 +294,39 @@ footer div i {
 
 footer div i:hover {
   transform: scale(1.2);
-  color: var(--accent-1); /* Light green hover effect */
+  color: var(--accent-1);
 }
 
-
-
-@media (max-width: 480px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* Mobile: 600px and below */
+@media (max-width: 600px) {
+  .page-title h1 {
+    font-size: 24px;
   }
 
-  .article-card {
-    flex-direction: column;
-    height: auto;
+  .ads-banner {
+    padding: 1rem;
+    font-size: 14px;
   }
 
-  .article-image {
-    width: 100%;
-    height: 200px;
+  .see-more .btn {
+    padding: 0.8rem 2rem;
+    font-size: 14px;
   }
 
-  .newsletter,
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+  .newsletter p {
+    font-size: 1.2rem;
   }
 
-  .article-card {
-    flex-direction: row;
-    height: auto;
+  footer p {
+    font-size: 1.2rem;
   }
 
-  .newsletter {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
+  .article-title {
+    font-size: 18px;
+    padding-bottom: 1rem;
   }
 
-  .newsletter .left-side,
-  .newsletter .news-image {
-    width: 100%;
-  }
-
-  footer {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-}
-
- 
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .article-card {
-    flex-direction: row;
-  }
-
-  .newsletter {
-    flex-direction: row;
-    gap: 3rem;
+  .article-details {
+    font-size: 12px;
   }
 }
