@@ -43,40 +43,6 @@
   color: #bcbcbc;
 }
 
-input.invalid {
-  border-color: red;
-}
-
-.error-message {
-  color: red;
-  font-size: 0.75rem;
-  display: block;
-}
-
-.message {
-  text-align: center;
-  margin-top: 1rem;
-  color: green;
-}
-
-.password {
-  position: relative;
-}
-
-.slash-eye-1 {
-  color: #8d8ba7;
-  position: absolute;
-  top: 29.5rem;
-  right: 16rem;
-}
-
-.slash-eye-2 {
-  color: #8d8ba7;
-  position: absolute;
-  top: 24.1rem;
-  right: 16rem;
-}
-
 .info {
   color: #bcbcbc;
   margin-top: -0.8rem;

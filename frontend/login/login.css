@@ -65,10 +65,6 @@ input[type="email"] {
   margin-bottom: 20px;
 }
 
-.password {
-  position: relative;
-}
-
 .forgot {
   display: flex;
   justify-content: flex-end;

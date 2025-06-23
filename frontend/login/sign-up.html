@@ -51,9 +51,9 @@
         </div>
 
         <form
-          id="userForm"
+          id="signupForm"
           data-type="signup"
-          class="col-lg-6 d-flex flex-column justify-content-center align-items-center gap-3 pt-4 pb-2 px-4"
+          class="col-lg-6 d-flex flex-column justify-content-center align-items-center gap-3 p-5"
         >
           <h5 class="f-inter d-none d-lg-block">Sign-up to Health-Circuit</h5>
           <button
@@ -73,38 +73,42 @@
           <input
             class="form-control"
             type="text"
+            name="username"
             placeholder="Full Name"
             required
           />
-          <small class="error-message"></small>
           <input
             class="form-control"
             type="email"
+            name="email"
             placeholder="Email"
             required
           />
-          <small class="error-message"></small>
-          <input class="form-control" type="tel" placeholder="Phone No" />
-          <small class="error-message"></small>
+          <input
+            class="form-control"
+            name="phoneNo"
+            type="tel"
+            placeholder="Phone No"
+          />
           <input
             class="form-control"
             type="password"
+            name="password"
             placeholder="Password"
             required
           />
-          <span><i class="fa-solid fa-eye-slash slash-eye-2"></i></span>
-          <small class="error-message"></small>
+          <!-- <span><i class="fa-solid fa-eye-slash slash-eye-2"></i></span> -->
           <input
-            class="form-control position-relative"
+            class="form-control"
             type="password"
+            name="confirmPassword"
             placeholder="Confirm Password"
             required
           />
-          <span><i class="fa-solid fa-eye-slash slash-eye-1"></i></span>
-          <small class="error-message"></small>
+          <!-- <span><i class="fa-solid fa-eye-slash slash-eye-1"></i></span> -->
 
-          <button class="btn sign-up-btn">Sign-up</button>
-          <div id="successMessage" class="message"></div>
+          <p id="message"></p>
+          <button type="submit" class="btn sign-up-btn">Sign-up</button>
 
           <div class="hr-text d-lg-none d-sm-block mb-2"><span>OR</span></div>
 
@@ -128,6 +132,6 @@
       </div>
     </div>
 
-    <script src="/frontend/login/form.js"></script>
+    <script src="/frontend/login/signup.js"></script>
   </body>
 </html>

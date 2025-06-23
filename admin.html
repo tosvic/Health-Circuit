@@ -39,13 +39,11 @@
         <div class="message" id="responseMessage"></div>
 
         <label for="email"></label>
-        <input type="email" placeholder="Email address" />
-        <small class="error-message"></small>
+        <input type="email" name="email" placeholder="Email address" />
         <br />
         <div class="password">
-          <input type="password" placeholder="Enter Password" />
-          <span><i class="fa-solid fa-eye-slash"></i></span>
-          <small class="error-message"></small>
+          <input type="password" name="password" placeholder="Enter Password" />
+          <!-- <span><i class="fa-solid fa-eye-slash"></i></span> -->
         </div>
 
         <a href="/frontend/login/forgot.html">
@@ -53,7 +51,9 @@
         </a>
 
         <button class="button">Login</button>
-        <div id="successMessage" class="message"></div>
+
+        <p id="message"></p>
+
         <p class="text-account">
           Don't have an account?
           <a href="/frontend/Login-components/sign-in.html">Sign-up</a>
@@ -61,6 +61,6 @@
       </form>
     </div>
 
-    <script src="/frontend/login/form.js"></script>
+    <script src="/frontend/login/login.js"></script>
   </body>
 </html>
