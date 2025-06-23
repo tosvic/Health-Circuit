@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-
 * {
   padding: 0;
   margin: 0;
@@ -20,7 +19,6 @@
   --accent-1: #10B981;
   --accent-2: #F59E0B;
   --accent-3: #EF4444;
-  --footer: #DDDCFE;
   --fontsize-heading-main:36px;
   --fontsize-section-title: 28px;
   --fontsize-body: 16px;
@@ -38,8 +36,8 @@ img {
 }
 main{
   margin: 0 auto;
-  padding: 0.5rem;
-  max-width: 1200px;
+  padding: 1rem;
+  max-width: 1440px;
 }
 
 .page-title h1 {
@@ -49,35 +47,41 @@ main{
   text-align: center;
   padding: 2rem 0;
 }
-
 .wellness-articles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
-  grid-auto-rows: 1fr;
 }
 
 .article-card {
   display: flex;
-  align-items: stretch;
+  flex-direction: row; 
   gap: 1rem;
-  height: 100%; 
+  border-radius: 10px;
+  overflow: hidden;
+}
+.article-card:hover {
+  background-color: var(--neutral-2);
+  cursor: pointer;
 }
 
+
 .article-image {
-  width: 60%;
-  height: 100%;
+  width: 50%;
+  height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
+
 .article-content {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  padding: 0.5rem;
-
+  justify-content: space-between;
+  padding: 1rem;
+  width: 50%;
 }
-.article-text{
+
+.article-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -91,12 +95,13 @@ main{
 }
 
 .article-title {
+  padding-bottom: 1rem;
   font-family: var(--Open-Sans);
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
-  color: #090909;
-  padding-bottom: 2.5rem;
+  color: black;
 }
+
 .article-details {
   font-size: 14px;
   font-family: var(--Inter);
@@ -115,8 +120,11 @@ main{
   cursor: pointer;
   margin: 3rem auto;
   padding: 1rem 3rem;
-
 }
+.see-more .btn:hover {
+  background-color: var(--primary-2);
+}
+
 
 .ads-banner {
   display: flex;
@@ -133,7 +141,7 @@ main{
   
 .newsletter {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row !important;
   align-items: center;
   justify-content: space-between;
   background: var(--primary-1);
@@ -141,18 +149,20 @@ main{
   padding: 24px;
   color: white;
   gap: 24px;
+  width: 100%;
 }
+
 .newsletter img {
   width: 120px;
   max-width: 100%;
   border-radius: 8px;
 }
 .newsletter .news-image{
-  width: 400px;
+  width: 600px;
   max-width: 100%;
 }
 .newsletter .left-side{
-  width: 40%;
+  width: 50%;
 }
 
 .newsletter form {
@@ -181,20 +191,21 @@ main{
   cursor: pointer;
   border-radius: 6px;
 }
+.newsletter .btn:hover {
+  background-color: var(--accent-2);
+}
 
 footer {
-  background-color: var(--footer);
-;
+  background-color: var(--neutral-2, hsla(243, 95%, 93%, 1));
   color: var(--primary-1);
   padding: 40px 20px;
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 24px;
   font-family: var(--Roboto);
-  margin-top: 6rem;
-  
+  margin-top: 1rem;
 }
 
 footer > div {
@@ -203,13 +214,13 @@ footer > div {
 }
 
 footer img {
-  width: 120px;
-  max-width: 10%;
+  width: 100px;
+  max-width: 30%;
   border-radius: 8px;
 }
 
 footer p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--neutral-1);
 }
@@ -231,78 +242,92 @@ footer div i {
 
 footer div i:hover {
   transform: scale(1.2);
-  color: var(--accent-1); /* Light green hover effect */
+  color: var(--accent-1);
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+  .page-title h1 {
+    font-size: 24px;
+  }
+  .article-title {
+    font-size: 18px;
+    padding-bottom: 1rem;
+  }
 
+  .article-details {
+    font-size: 12px;
+  }
+  .ads-banner {
+    padding: 1rem;
+    font-size: 14px;
+  }
 
-@media (max-width: 480px) {
-  .card-grid {
+  .see-more .btn {
+    padding: 0.8rem 2rem;
+    font-size: 14px;
+  }
+
+  .newsletter {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+  .newsletter .left-side,
+  .newsletter .news-image {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .newsletter img {
+    width: 120px;
+  }
+  .newsletter .news-image {
+    width: 100% !important;
+    min-width: 0;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    gap: 12px;
+  }
+  footer > div {
+    max-width: 100%;
+  }
+  footer img {
+    width: 120px;
+  }
+  footer p {
+    font-size: 1.1rem;
+  }
+
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .wellness-articles {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .article-card {
     flex-direction: column;
-    height: auto;
   }
 
   .article-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
   }
 
-  .newsletter,
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-  }
-
-  .article-card {
-    flex-direction: row;
-    height: auto;
-  }
-
-  .newsletter {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .newsletter .left-side,
-  .newsletter .news-image {
+  .article-content {
     width: 100%;
   }
-
-  footer {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+   .newsletter .news-image {
+    width: 50%;
   }
-}
-
- 
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .article-card {
-    flex-direction: row;
-  }
-
-  .newsletter {
-    flex-direction: row;
-    gap: 3rem;
+  .newsletter .left-side {
+    width: 50%;
   }
 }
