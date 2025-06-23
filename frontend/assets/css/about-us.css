@@ -1,0 +1,262 @@
+/* ========== IMPORT FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@400&display=swap');
+
+/* ========== CSS VARIABLES ========== */
+:root {
+  --color-primary-1: #1E3A8A;
+  --color-primary-2: #3B82F6;
+  --color-neutral-1: #374151;
+  --color-neutral-2: #F3F4F6;
+  --color-neutral-3: #FFFFFF;
+  --color-accent-1: #10B981;
+  --color-accent-2: #F59E0B;
+  --color-accent-3: #EF4444;
+
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --max-width: 1200px;
+  --transition: 0.3s ease;
+}
+
+/* ========== GLOBAL STYLES ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  background-color: var(--color-neutral-3);
+  color: var(--color-neutral-1);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: .9rem;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-1);
+}
+
+h2 {
+  font-size: 36px;
+  
+}
+
+h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  background: var(--color-neutral-3);
+  border-bottom: 1px solid var(--color-neutral-2);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo-img {
+  max-height: 50px;
+  border-radius: .7rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-primary-1);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary-2);
+}
+
+/* ========== HAMBURGER MENU ========== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background: var(--color-primary-1);
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* ========== HERO ========== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero h2 {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--color-neutral-1);
+}
+
+/* ========== SECTIONS ========== */
+.info-section {
+  background: var(--color-neutral-2);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.section-grid .text {
+  order: 1;
+}
+
+.section-grid .image {
+  order: 2;
+  text-align: right;
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+  background-color: var(--color-primary-2);
+  padding: 3rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-neutral-2);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary-1);
+  color: var(--color-neutral-3);
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.contact-form button:hover {
+  background: var(--color-primary-2);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  body {
+    font-size: 15px;
+  }
+
+  .hero-grid,
+  .section-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-grid .image {
+    order: 2;
+    text-align: center;
+  }
+
+  .section-grid .text {
+    order: 1;
+  }
+
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-neutral-3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 99;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 375px) {
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  body {
+    font-size: 13px;
+  }
+}

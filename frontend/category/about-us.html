@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us Page</title>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/frontend/assets/css/about-us.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <img src="/frontend/assets/images/logo.png" alt="Health Circuit logo" class="logo-img">
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#mission">Our Mission</a>
+        <a href="#offer">What We Offer</a>
+        <a href="#story">Our Story</a>
+        <a href="#commitment">Our Commitment</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>A digital health literacy platform to improve public access to health knowledge and local health updates</h2>
+        <p>Founded in 2025, we’re your one-stop platform for all the vital updates, practical tips, and inspiration you need to navigate and express the power of a healthier life.</p>
+      </div>
+      <div class="hero-img">
+        <img src="/frontend/assets/images/image 4.png" alt="Doctor consulting patients" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission -->
+  <section id="mission" class="info-section">
+    <div class="container section-grid">
+      <div class="text">
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Simplify Complex Health Information...</li>
+          <li>Provide Practical Solutions...</li>
+          <li>Foster a Healthier Community...</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/frontend/assets/images/image 5.png" alt="Healthcare professional" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section id="offer" class="info-section">
+    <div class="container section-grid reverse">
+      <div class="text">
+        <h3>What We Offer</h3>
+        <ul>
+          <li>Daily Health Updates...</li>
+          <li>Problem-Solving Tips...</li>
+          <li>In-Depth Analysis...</li>
+          <li>Expert Insights...</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/frontend/assets/images/image 6.png" alt="Tech health interface" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section id="story" class="info-section">
+    <div class="container section-grid">
+      <div class="text">
+        <h3>Our Story</h3>
+        <p>Health Circuit was founded by KnowWell with a vision to bridge the gap...</p>
+      </div>
+      <div class="image">
+        <img src="/frontend/assets/images/image 7.png" alt="Team discussing health" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Commitment -->
+  <section id="commitment" class="info-section">
+    <div class="container section-grid reverse">
+      <div class="text">
+        <h3>Our Commitment</h3>
+        <ul>
+          <li>Accurate</li>
+          <li>Relevant</li>
+          <li>Actionable</li>
+          <li>Trustworthy</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/frontend/assets/images/image 8.png" alt="Heart and hand" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="contact-section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h3>We are just a message away</h3>
+        <p>Our goal is to deliver the highest caliber content that inspires action.</p>
+        <p><strong>Email:</strong> contact@healthcircuit.com</p>
+        <p><strong>Phone:</strong> (123) 419-419</p>
+        <p><strong>Location:</strong> No 22 Techcrush Group 6 whatsapp</p>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Script for mobile nav -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
