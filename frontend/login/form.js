@@ -1,86 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const signupForm = document.getElementById("signupForm");
-  const loginForm = document.getElementById("loginForm");
+  const form = document.getElementById("userForm");
+  if (!form) return;
 
-  if (signupForm) {
-    handleSignup(signupForm);
-  }
+  const formType = form.dataset.type; // 'signup' or 'login'
+  const successMessage = document.getElementById("successMessage");
 
-  if (loginForm) {
-    handleLogin(loginForm);
-  }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Validate based on form type
+    const isValid = validateForm(form, formType);
+    if (!isValid) return;
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value.trim();
+    });
+
+    // API endpoint (test)
+    const apiUrl = "http://localhost:3000/healthcircuit/signup";
+    // const apiUrl = "https://postman-echo.com/post";
+
+    try {
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      console.log("Server response:", result);
+
+      if (formType === "signup") {
+        successMessage.textContent = "Sign-up successful!";
+        successMessage.style.color = "green";
+        form.reset();
+      } else if (formType === "login") {
+        successMessage.textContent = "Login successful! Redirecting...";
+        successMessage.style.color = "green";
+        setTimeout(() => {
+          window.location.href = "/frontend/admin/all-articles.html";
+        }, 1500);
+      }
+    } catch (err) {
+      console.error("Request failed:", err);
+      successMessage.textContent = "Something went wrong.";
+      successMessage.style.color = "red";
+    }
+  });
 });
 
-function handleSignup(form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = {
-      username: formData.get("username"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
+function validateForm(form, type) {
+  let isValid = true;
+  const inputs = form.querySelectorAll("input");
 
-    // if (!validateForm(data)) return;
+  inputs.forEach((input) => {
+    const error = input.nextElementSibling;
+    const value = input.value.trim();
+    error.textContent = "";
+    input.classList.remove("invalid");
 
-    try {
-      const res = await fetch("https://postman-echo.com/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      console.log(result);
-      alert("Sign up successful!");
-    } catch (err) {
-      console.error("Signup error:", err);
-      alert("Signup failed");
+    if (!value) {
+      error.textContent = `${input.name} is required`;
+      input.classList.add("invalid");
+      isValid = false;
+    } else if (input.name === "email" && !/^\S+@\S+\.\S+$/.test(value)) {
+      error.textContent = "Invalid email format";
+      input.classList.add("invalid");
+      isValid = false;
+    } else if (input.name === "password" && value.length < 6) {
+      error.textContent = "Password must be at least 6 characters";
+      input.classList.add("invalid");
+      isValid = false;
     }
   });
+
+  return isValid;
 }
-
-function handleLogin(form) {
-  const responseBox = document.getElementById("responseMessage");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = {
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
-
-    // if (!validateForm(data)) return;
-
-    try {
-      const res = await fetch("https://postman-echo.com/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      console.log(result);
-      responseBox.textContent = "Login successful! Redirecting...";
-      responseBox.style.color = "green";
-
-      setTimeout(() => {
-        window.location.href = "/frontend/admin/all-articles.html";
-      }, 1500);
-    } catch (err) {
-      console.error("Login error:", err);
-      responseBox.textContent = "Login failed. Try again.";
-      responseBox.style.color = "red";
-    }
-  });
-}
-
-// function validateForm(data) {
-//   for (const key in data) {
-//     if (!data[key]) {
-//       alert(`Please enter your ${key}`);
-//       return false;
-//     }
-//   }
-//   return true;
-// }

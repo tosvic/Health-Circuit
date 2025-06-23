@@ -35,15 +35,17 @@
         <p class="sign-in">sign-in to continue</p>
       </div>
 
-      <form class="forms" id="loginForm">
+      <form class="forms" id="loginForm" data-type="login">
         <div class="message" id="responseMessage"></div>
 
         <label for="email"></label>
         <input type="email" placeholder="Email address" />
+        <small class="error-message"></small>
         <br />
         <div class="password">
           <input type="password" placeholder="Enter Password" />
           <span><i class="fa-solid fa-eye-slash"></i></span>
+          <small class="error-message"></small>
         </div>
 
         <a href="/frontend/login/forgot.html">
@@ -51,6 +53,7 @@
         </a>
 
         <button class="button">Login</button>
+        <div id="successMessage" class="message"></div>
         <p class="text-account">
           Don't have an account?
           <a href="/frontend/Login-components/sign-in.html">Sign-up</a>
