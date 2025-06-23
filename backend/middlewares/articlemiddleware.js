@@ -51,6 +51,11 @@ export const createArticleValidation = [
   body("content").escape().notEmpty().withMessage("Required"),
 ];
 
+export const categoryMiddleware = [
+  body("categoryName").escape().notEmpty().withMessage(' Field cannot be empty'),
+  body("description").escape().notEmpty().withMessage('Description is required')
+];
+
 export const validateArticleMiddleware = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
