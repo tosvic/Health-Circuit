@@ -3,198 +3,389 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health News Page</title>
-    <link rel="stylesheet" href="/frontend/assets/css/publichealth.css" />
-    <link rel="stylesheet" href="/frontend/assets/css/health-news.css" />
+    <title>HealthNews page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/frontend/components/nav.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/wellness.css" />
     <link rel="stylesheet" href="/frontend/assets/sass/css/main.min.css" />
     <link rel="stylesheet" href="/frontend/assets/css/main.css" />
   </head>
   <body>
+    <!-- <header>
+      <div class="logo-container">
+        <img src="/assets/images/logo.png" alt="logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">HealthNews</a></li>
+          <li><a href="#">Wellness</a></li>
+          <li><a href="#">Nutrition</a></li>
+          <li><a href="#">Public Health</a></li>
+          <li><a href="#">Health Tips</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+      <div class="search-container" id="searchContainer">
+        <button class="search-icon" id="searchBtn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <input
+          type="text"
+          class="search-box"
+          id="searchBox"
+          placeholder="Search..."
+        />
+      </div>
+    </header> -->
+
     <my-header></my-header>
+
     <main>
-      <h1>NEWS</h1>
-      <section class="1st-section">
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Can Sleep Paralysis kill you? What to believe</p>
-              <p class="author">Author</p>
+      <section class="page-title">
+        <h1>News</h1>
+      </section>
+
+      <section class="wellness-articles">
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Woman meditating"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Start with Mindful mornings <br />
+                Sit quietly for five minutes each morning
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>FDA approves new treatment for dry eye disease</p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
 
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>How new AI tool makes lifesaving alert on sepis</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Green smoothie"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Hydration = Energy<br />Infuse your water with lemon, mint, or
+                cucumber for a refreshing twist.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Lassa Fever outbreak in Nigeria</p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
-
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Invasive Non_Typhodial Salmonella</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="tablets"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Movement as Medicine <br />Set a reminder to stand up and
+                stretch every hour, especially if you work at a desk.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Chlorea Outbreak in Nigeria</p>
-              <p class="author">Author</p>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="fruits"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Nourish, Don’t Restrict <br />Trade refined snacks for nuts,
+                yogurt, or fruit.
+              </h3>
             </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="coffee camera"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Digital Detox for Mental Clarity <br />Try a 24-hour social
+                media break this weekend.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="woman sleeping"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Sleep is Self-Care <br />Aim for 7–9 hours per night, and build
+                a calming bedtime routine—like herbal tea, or dim lights.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
       </section>
 
-      <p class="Ads">Ads</p>
+      <section class="ads-banner">
+        <p>Ads</p>
+      </section>
 
-      <section class="2nd-section">
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>World Clubfoot Day</p>
-              <p class="author">Author</p>
+      <section class="wellness-articles">
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Woman meditating"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Start with Mindful mornings <br />
+                Sit quietly for five minutes each morning
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>Wellness</h5>
-              <p>Mental Health</p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
 
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>New Covid 19 Variant</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Green smoothie"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">Wellness</p>
+              <h3 class="article-title">
+                Hydration = Energy<br />Infuse your water with lemon, mint, or
+                cucumber for a refreshing twist.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>New< Cancer Centers in Nigeria/p></p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
-
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>Wellness</h5>
-              <p>Exercise and Brain Health</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="tablets"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Movement as Medicine <br />Set a reminder to stand up and
+                stretch every hour, especially if you work at a desk.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>Wellness</h5>
-              <p>Artificial Sweetner and Heart Damage</p>
-              <p class="author">Author</p>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="fruits"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Nourish, Don’t Restrict <br />Trade refined snacks for nuts,
+                yogurt, or fruit.
+              </h3>
             </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="coffee camera"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">Wellness</p>
+              <h3 class="article-title">
+                Digital Detox for Mental Clarity <br />Try a 24-hour social
+                media break this weekend.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="woman sleeping"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">Wellness</p>
+              <h3 class="article-title">
+                Sleep is Self-Care <br />Aim for 7–9 hours per night, and build
+                a calming bedtime routine—like herbal tea, or dim lights.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
       </section>
 
-      <p class="Ads">Ads</p>
+      <section class="ads-banner">
+        <p>Ads</p>
+      </section>
 
-      <section class="3rd-section">
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Inclusive Policies Reduce Sucide Risk</p>
-              <p class="author">Author</p>
+      <section class="wellness-articles">
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Woman meditating"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Start with Mindful mornings <br />
+                Sit quietly for five minutes each morning
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Respiratory Syncyital Virus (RSV)</p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
 
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>Alchohol and Pancreativ Cancer</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="Green smoothie"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Hydration = Energy<br />Infuse your water with lemon, mint, or
+                cucumber for a refreshing twist.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>NEWS</h5>
-              <p>CDC Disease Warning</p>
-              <p class="author">Author</p>
-            </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
-
-        <div>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>Wellness</h5>
-              <p>Food choices and Mental Health</p>
-              <p class="author">Author</p>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="tablets"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Movement as Medicine <br />Set a reminder to stand up and
+                stretch every hour, especially if you work at a desk.
+              </h3>
             </div>
-          </article>
-          <article>
-            <img src="/frontend/assets/images/friut.jpg" alt="" />
-            <div>
-              <h5>Wellness</h5>
-              <p>Mediterranean Diet and Cpgnitive Health</p>
-              <p class="author">Author</p>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="fruits"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">News</p>
+              <h3 class="article-title">
+                Nourish, Don’t Restrict <br />Trade refined snacks for nuts,
+                yogurt, or fruit.
+              </h3>
             </div>
-          </article>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="coffee camera"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">Wellness</p>
+              <h3 class="article-title">
+                Digital Detox for Mental Clarity <br />Try a 24-hour social
+                media break this weekend.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <img
+            src="/frontend/assets/images/article image.png"
+            alt="woman sleeping"
+            class="article-image"
+          />
+          <div class="article-content">
+            <div class="article-text">
+              <p class="article-category">Wellness</p>
+              <h3 class="article-title">
+                Sleep is Self-Care <br />Aim for 7–9 hours per night, and build
+                a calming bedtime routine—like herbal tea, or dim lights.
+              </h3>
+            </div>
+            <p class="article-details">Author Name | 2 hours ago</p>
+          </div>
         </div>
       </section>
-      <a href="#" class="more-article"><p>See More Article</p></a>
-      <div class="newsletter">
+
+      <section class="see-more">
+        <button class="btn">See More Article</button>
+      </section>
+
+      <section class="ads-banner">
+        <p>Ads</p>
+      </section>
+
+      <section class="newsletter">
         <div class="left-side">
           <img src="/frontend/assets/images/logo.png" alt="logo" />
           <p>Get the best healthcare Newsletter in your inbox</p>
@@ -209,22 +400,36 @@
           </form>
         </div>
         <img
-          src="/frontend/assets/images/newsletter.jpg"
+          src="/frontend/assets/images/newsletter-illustration.png"
           alt=""
           class="news-image"
         />
-      </div>
+      </section>
     </main>
+    <footer>
+      <div class="">
+        <img src="/frontend/assets/images/logo.png" alt="" />
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </div>
+      <div>
+        <h4>Follow us</h4>
+        <div>
+          <i class="fa-brands fa-linkedin"></i
+          ><i class="fa-brands fa-whatsapp"></i
+          ><i class="fa-brands fa-facebook-f"></i
+          ><i class="fa-brands fa-square-youtube"></i
+          ><i class="fa-brands fa-instagram"></i
+          ><i class="fa-brands fa-x-twitter"></i>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </footer>
 
+    <script src="/frontend/assets/js/wellness.js"></script>
+    <script src="/frontend/components/nav.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/frontend/components/newsletter.js"></script>
-    <script src="/frontend/components/nav.js"></script>
-    <script
-      src="https://kit.fontawesome.com/your-font-awesome-kit-code.js"
       crossorigin="anonymous"
     ></script>
   </body>

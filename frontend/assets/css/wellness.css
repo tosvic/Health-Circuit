@@ -20,6 +20,7 @@
   --accent-1: #10B981;
   --accent-2: #F59E0B;
   --accent-3: #EF4444;
+  --footer: #DDDCFE;
   --fontsize-heading-main:36px;
   --fontsize-section-title: 28px;
   --fontsize-body: 16px;
@@ -91,7 +92,7 @@ main{
 
 .article-title {
   font-family: var(--Open-Sans);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   color: #090909;
   padding-bottom: 2.5rem;
@@ -182,7 +183,7 @@ main{
 }
 
 footer {
-  background-color: var(--neutral-2, hsla(243, 95%, 93%, 1));
+  background-color: var(--footer);
 ;
   color: var(--primary-1);
   padding: 40px 20px;
@@ -192,7 +193,8 @@ footer {
   flex-wrap: wrap;
   gap: 24px;
   font-family: var(--Roboto);
-  margin-top: 1rem;
+  margin-top: 6rem;
+  
 }
 
 footer > div {
@@ -202,12 +204,12 @@ footer > div {
 
 footer img {
   width: 120px;
-  max-width: 100%;
+  max-width: 10%;
   border-radius: 8px;
 }
 
 footer p {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: var(--neutral-1);
 }
